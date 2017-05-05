@@ -4,5 +4,16 @@
     <string name="app_name">MobileSafe</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    
+    <string name="version_name">Version： </string>
+    <string name="version_update">Version Update</string>
+    <string name="button_update_confirm">アップデート</string>
+    <string name="button_update_cancel">後で</string>
+    
+     <string name="sdcard_not_mounted">SDカードが見つかりませんので、ダウンロード処理ができません。</string>
+    
+    
+    <string name="error_update_failure">アップデートに失敗しました。</string>
+    
 
 </resources>
