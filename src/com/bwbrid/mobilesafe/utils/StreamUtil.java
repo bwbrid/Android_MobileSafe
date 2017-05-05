@@ -8,6 +8,7 @@ public class StreamUtil {
 
 	/**
 	 * inputStream‚ð•¶Žš—ñ‚É•ÏŠ·
+	 * 
 	 * @param inputStream
 	 * @return •ÏŠ·Œã‚Ì•¶Žš—ñ
 	 */
@@ -16,9 +17,9 @@ public class StreamUtil {
 		byte[] buffer = new byte[1024];
 		int temp = -1;
 		String result = null;
-		
+
 		try {
-			while((temp = inputStream.read(buffer)) != -1) {
+			while ((temp = inputStream.read(buffer)) != -1) {
 				baos.write(buffer, 0, temp);
 			}
 			result = baos.toString();
