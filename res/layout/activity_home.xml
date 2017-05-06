@@ -5,9 +5,26 @@
     android:orientation="vertical" >
     
 	<TextView 
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:textSize="20sp"
-	    android:text="HOME"
-	    />
+	    style="@style/TitleStyle"
+	    android:text="@string/home_title" />
+	
+	<com.bwbrid.mobilesafe.view.FocusTextView 
+	    android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:text="@string/home_announce"
+        android:textColor="#000" />
+	
+	<GridView 
+	    android:id="@+id/gv_home"
+	    android:numColumns="3"
+	    android:verticalSpacing="10dp"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent">
+	</GridView>
+	
+	
 </LinearLayout>

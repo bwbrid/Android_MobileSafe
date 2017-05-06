@@ -24,12 +24,16 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
+import android.view.animation.AlphaAnimation;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bwbrid.mobilesafe.activity.HomeActivity;
 import com.bwbrid.mobilesafe.bean.UpdateBean;
-import com.bwbrid.mobilesafe.commcon.CommonConstant;
+import com.bwbrid.mobilesafe.common.CommonConstant;
+import com.bwbrid.mobilesafe.common.SpConstant;
 import com.bwbrid.mobilesafe.utils.LogUtil;
+import com.bwbrid.mobilesafe.utils.SpUtil;
 import com.bwbrid.mobilesafe.utils.StreamUtil;
 import com.bwbrid.mobilesafe.utils.ToastUtil;
 import com.lidroid.xutils.HttpUtils;
@@ -46,13 +50,14 @@ public class SplashActivity extends Activity {
 	private final static long SLEEP_TIME = 3000;
 
 	private String tag = "SplashActivity";
-	private Context mContext;
+	private Context mContext = MyApplication.getContext();
 
 	private TextView tv_version_name;
-	private int mLocalVersionCode;
 
+	private RelativeLayout rl_root;
+	
 	private UpdateBean mUpdateBean;
-
+	
 	private Handler mHandle = new Handler() {
 		public void handleMessage(android.os.Message msg) {
 			switch (msg.what) {
@@ -84,8 +89,7 @@ public class SplashActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_splash);
-		mContext = this;
-
+		
 		initUI();
 		initData();
 	}
@@ -106,7 +110,7 @@ public class SplashActivity extends Activity {
 			return;
 		}
 
-		AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setIcon(R.drawable.ic_launcher);
 		builder.setTitle(R.string.version_update);
 		builder.setMessage(mUpdateBean.getVersionDes());
@@ -177,8 +181,7 @@ public class SplashActivity extends Activity {
 						}
 
 						@Override
-						public void onLoading(long total, long current,
-								boolean isUploading) {
+						public void onLoading(long total, long current, boolean isUploading) {
 							LogUtils.d("ダウンロード中");
 							LogUtils.d("total = " + total);
 							LogUtils.d("current = " + current);
@@ -200,8 +203,7 @@ public class SplashActivity extends Activity {
 	protected void installApk(File file) {
 		Intent intent = new Intent("android.intent.action.VIEW");
 		intent.addCategory("android.intent.category.DEFAULT");
-		intent.setDataAndType(Uri.fromFile(file),
-				"application/vnd.android.package-archive");
+		intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
 		// startActivity(intent);
 		startActivityForResult(intent, 0);
 	}
@@ -220,18 +222,34 @@ public class SplashActivity extends Activity {
 	 */
 	private void initUI() {
 		tv_version_name = (TextView) findViewById(R.id.tv_version_name);
+		rl_root = (RelativeLayout) findViewById(R.id.rl_root);
+		
+		// 初期処理時画面のアニメーション
+		initAnimation();
+	}
 
-		mLocalVersionCode = getVersionCode();
-		checkVersion();
-
+	/**
+	 * 初期処理のアニメーション
+	 */
+	private void initAnimation() {
+		AlphaAnimation alphaAnimation = new AlphaAnimation(0, 1);
+		alphaAnimation.setDuration(2000);
+		rl_root.setAnimation(alphaAnimation);
 	}
 
 	/**
 	 * 画面の表示データ初期処理
 	 */
 	private void initData() {
-		tv_version_name.setText(getString(R.string.version_name)
-				+ getVersionName());
+		tv_version_name.setText(getString(R.string.version_name) + getVersionName());
+		
+		boolean isUpdate = SpUtil.getBoolean(SpConstant.OPEN_UPDATE, false);
+		
+		if (isUpdate) {
+			checkVersion(getVersionCode());
+		} else {
+			mHandle.sendEmptyMessageDelayed(CommonConstant.ENTER_HOME, SLEEP_TIME);
+		}
 	}
 
 	/**
@@ -256,8 +274,10 @@ public class SplashActivity extends Activity {
 
 	/**
 	 * サーバーに最新のバージョンがあるかどうかをチェック
+	 * 
+	 * @param version ローカルバージョン
 	 */
-	private void checkVersion() {
+	private void checkVersion(final int version) {
 		new Thread() {
 			public void run() {
 
@@ -266,8 +286,7 @@ public class SplashActivity extends Activity {
 
 				try {
 					URL url = new URL(CommonConstant.SERVER_UPDATE_URL);
-					HttpURLConnection connection = (HttpURLConnection) url
-							.openConnection();
+					HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
 					// リクエストオプション設定
 					connection.setConnectTimeout(2000);
@@ -282,22 +301,17 @@ public class SplashActivity extends Activity {
 
 						JSONObject jsonObject = new JSONObject(json);
 						mUpdateBean = new UpdateBean();
-						mUpdateBean.setVersionName(jsonObject
-								.getString("versionName"));
-						mUpdateBean.setVersionDes(jsonObject
-								.getString("versionDes"));
-						mUpdateBean.setVersionCode(jsonObject
-								.getString("versionCode"));
-						mUpdateBean.setDownloadUrl(jsonObject
-								.getString("downloadUrl"));
+						mUpdateBean.setVersionName(jsonObject.getString("versionName"));
+						mUpdateBean.setVersionDes(jsonObject.getString("versionDes"));
+						mUpdateBean.setVersionCode(jsonObject.getString("versionCode"));
+						mUpdateBean.setDownloadUrl(jsonObject.getString("downloadUrl"));
 
 						LogUtil.d(tag, mUpdateBean.getVersionName());
 						LogUtil.d(tag, mUpdateBean.getVersionDes());
 						LogUtil.d(tag, mUpdateBean.getVersionCode());
 						LogUtil.d(tag, mUpdateBean.getDownloadUrl());
 
-						if (mLocalVersionCode < Integer.valueOf(mUpdateBean
-								.getVersionCode())) {
+						if (version < Integer.valueOf(mUpdateBean.getVersionCode())) {
 							msg.what = CommonConstant.UPDATE_VERSION;
 						} else {
 							msg.what = CommonConstant.ENTER_HOME;

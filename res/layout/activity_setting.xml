@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/TitleStyle"
+        android:text="@string/setting_title" />
+
+    <com.bwbrid.mobilesafe.view.SettingItewView
+        xmlns:mobilesafe="http://schemas.android.com/apk/res/com.bwbrid.mobilesafe"
+        android:id="@+id/stv_upadte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        mobilesafe:title="@string/setting_auto_update"
+        mobilesafe:desc_on="@string/setting_auto_update_on" 
+        mobilesafe:desc_off="@string/setting_auto_update_off" />
+        
+</LinearLayout>

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bwbrid.mobilesafe"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0.0" >
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -27,6 +27,7 @@
         </activity>
         
         <activity android:name="com.bwbrid.mobilesafe.activity.HomeActivity" />
+        <activity android:name="com.bwbrid.mobilesafe.activity.SettingActivity" />
     </application>
 
 </manifest>
