@@ -62,7 +62,7 @@ public class SpUtil {
 	}
 	
 	/**
-	 * SharedPreferencesƒIƒuƒWƒFƒNƒg‚ğæ“¾
+	 * SharedPreferencesã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—
 	 * @return SharedPreferences
 	 */
 	private static SharedPreferences getSharedPreferences() {

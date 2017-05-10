@@ -7,10 +7,10 @@ import java.io.InputStream;
 public class StreamUtil {
 
 	/**
-	 * inputStream‚ğ•¶š—ñ‚É•ÏŠ·
+	 * inputStreamã‚’æ–‡å­—åˆ—ã«å¤‰æ›
 	 * 
 	 * @param inputStream
-	 * @return •ÏŠ·Œã‚Ì•¶š—ñ
+	 * @return å¤‰æ›å¾Œã®æ–‡å­—åˆ—
 	 */
 	public static String StreamToString(InputStream inputStream) {
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();

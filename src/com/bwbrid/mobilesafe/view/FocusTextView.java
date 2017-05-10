@@ -18,7 +18,7 @@ public class FocusTextView extends TextView {
 		super(context, attrs, defStyle);
 	}
 	
-	// フォーカス取得処理
+	// 繝輔か繝ｼ繧ｫ繧ｹ蜿門ｾ怜�ｦ逅�
 	@Override
 	public boolean isFocused() {
 		return true;

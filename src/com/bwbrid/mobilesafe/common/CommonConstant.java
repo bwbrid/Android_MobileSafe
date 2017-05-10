@@ -7,12 +7,12 @@ import android.os.Environment;
 public class CommonConstant {
 
 	/**
-	 * ÅVƒo[ƒWƒ‡ƒ“‚ÌXVURL
+	 * æœ€æ–°ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã®æ›´æ–°URL
 	 */
 	public static final String SERVER_UPDATE_URL = "http://android.bwbrid.com/update.json";
 
 	/**
-	 * APK–¼
+	 * APKå
 	 */
 	public static final String APK_NAME = "MobileSafe.apk";
 
@@ -22,48 +22,58 @@ public class CommonConstant {
 	public static final String NAME_SPACE = "http://schemas.android.com/apk/res/com.bwbrid.mobilesafe";
 	
 	/**
-	 * ƒ_ƒEƒ“ƒ[ƒh‚µ‚½ƒtƒ@ƒCƒ‹‚Ì•Û‘¶ƒpƒX
+	 * ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã®ä¿å­˜ãƒ‘ã‚¹
 	 */
 	// public final static String DOWNLOAD_SAVE_PATH = Environment.getDownloadCacheDirectory() + File.separator + CommonConstant.APK_NAME;
 	public static final String DOWNLOAD_SAVE_PATH = Environment.getExternalStorageDirectory() + File.separator + CommonConstant.APK_NAME;
 
 	/**
-	 * HTTP‚ÌƒŠƒNƒGƒXƒgƒR[ƒh(200)
+	 * æš—å·åŒ–ã®salt
+	 */
+	public static final String MD5_SALT = "123";
+	
+	/**
+	 * HTTPã®ãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚³ãƒ¼ãƒ‰(200)
 	 */
 	public static final int HTTP_SUCCESS_CODE = 200;
 
 	/**
-	 * ƒJƒXƒ^ƒ}ƒCƒYƒXƒR[ƒh: ƒo[ƒWƒ‡ƒ“XVˆ—
+	 * ã‚«ã‚¹ã‚¿ãƒã‚¤ã‚ºã‚¹ã‚³ãƒ¼ãƒ‰: ãƒãƒ¼ã‚¸ãƒ§ãƒ³æ›´æ–°å‡¦ç†
 	 */
 	public static final int UPDATE_VERSION = 10;
 
 	/**
-	 * ƒJƒXƒ^ƒ}ƒCƒYƒXƒR[ƒh: ƒo[ƒWƒ‡ƒ“XVˆ—
+	 * ã‚«ã‚¹ã‚¿ãƒã‚¤ã‚ºã‚¹ã‚³ãƒ¼ãƒ‰: ãƒãƒ¼ã‚¸ãƒ§ãƒ³æ›´æ–°å‡¦ç†
 	 */
 	public static final int ENTER_HOME = 11;
 
 	/**
-	 * ƒJƒXƒ^ƒ}ƒCƒYƒXƒR[ƒh: MalformedURLException
+	 * ã‚«ã‚¹ã‚¿ãƒã‚¤ã‚ºã‚¹ã‚³ãƒ¼ãƒ‰: MalformedURLException
 	 */
 	public static final int ERROR_URL = 101;
 
 	/**
-	 * ƒJƒXƒ^ƒ}ƒCƒYƒXƒR[ƒh: IOException
+	 * ã‚«ã‚¹ã‚¿ãƒã‚¤ã‚ºã‚¹ã‚³ãƒ¼ãƒ‰: IOException
 	 */
 	public static final int ERROR_IO = 102;
 
 	/**
-	 * ƒJƒXƒ^ƒ}ƒCƒYƒXƒR[ƒh: JSONException
+	 * ã‚«ã‚¹ã‚¿ãƒã‚¤ã‚ºã‚¹ã‚³ãƒ¼ãƒ‰: JSONException
 	 */
 	public static final int ERROR_JSON = 103;
 
 	/**
-	 * ƒJƒXƒ^ƒ}ƒCƒYƒXƒR[ƒh: NumberFormatException
+	 * ã‚«ã‚¹ã‚¿ãƒã‚¤ã‚ºã‚¹ã‚³ãƒ¼ãƒ‰: NumberFormatException
 	 */
 	public static final int ERROR_NUMBER_FORMAT = 104;
 	
 	/**
-	 * ƒuƒ‰ƒ“ƒN
+	 * ãƒ–ãƒ©ãƒ³ã‚¯
 	 */
 	public static final String BLANK = "";
+	
+	/**
+	 * ãƒ–ãƒ©ãƒ³ã‚¯
+	 */
+	public static final String STR_ZERO = "0";
 }

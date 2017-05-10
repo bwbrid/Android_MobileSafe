@@ -31,10 +31,10 @@ public class SettingItewView extends RelativeLayout {
 		super(context, attrs, defStyle);
 		View.inflate(context, R.layout.setting_item_view, this);
 
-		// layout.xml‚©‚ç‘ÎÛ‘®«’l‚ğæ“¾
+		// layout.xmlã‹ã‚‰å¯¾è±¡å±æ€§å€¤ã‚’å–å¾—
 		getAttribute(attrs);
 
-		// ƒ^ƒCƒgƒ‹‚ğİ’è
+		// ã‚¿ã‚¤ãƒˆãƒ«ã‚’è¨­å®š
 		TextView tv_setting_title = (TextView) findViewById(R.id.tv_setting_title);
 		tv_setting_title.setText(mTitle);
 
@@ -43,7 +43,7 @@ public class SettingItewView extends RelativeLayout {
 	}
 
 	/**
-	 * layout.xml‚©‚ç‘ÎÛ‘®«’l‚ğæ“¾
+	 * layout.xmlã‹ã‚‰å¯¾è±¡å±æ€§å€¤ã‚’å–å¾—
 	 * 
 	 * @param attrs
 	 */
@@ -54,7 +54,7 @@ public class SettingItewView extends RelativeLayout {
 	}
 
 	/**
-	 * ƒ`ƒFƒbƒNƒ{ƒbƒNƒX‚Ì‘I‘ğó‘Ôitrue: ‘I‘ğA@false: –¢‘I‘ğj
+	 * ãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹ã®é¸æŠçŠ¶æ…‹ï¼ˆtrue: é¸æŠã€ã€€false: æœªé¸æŠï¼‰
 	 * 
 	 * @return
 	 */
@@ -63,10 +63,10 @@ public class SettingItewView extends RelativeLayout {
 	}
 
 	/**
-	 * ƒ`ƒFƒbƒNƒ{ƒbƒNƒX‚Ì‘I‘ğó‘Ô‚É‚æ‚éˆ—
+	 * ãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹ã®é¸æŠçŠ¶æ…‹ã«ã‚ˆã‚‹å‡¦ç†
 	 * 
 	 * @param isCheck
-	 *            ƒ`ƒFƒbƒNƒ{ƒbƒNƒX‚Ì‘I‘ğó‘Ô
+	 *            ãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹ã®é¸æŠçŠ¶æ…‹
 	 */
 	public void setCheckState(boolean isCheck) {
 		cb_setting_check.setChecked(isCheck);

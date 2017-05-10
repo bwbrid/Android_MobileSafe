@@ -18,15 +18,6 @@
         android:textColorHint="#bbb"
         android:textColor="#000" />
 
-    <EditText
-        android:id="@+id/et_dialog_confim_pwd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/dialog_confim_password"
-        android:inputType="textPassword"
-        android:textColorHint="#bbb"
-        android:textColor="#000" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

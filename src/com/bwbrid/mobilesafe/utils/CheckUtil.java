@@ -6,22 +6,22 @@ import com.bwbrid.mobilesafe.common.CommonConstant;
 public class CheckUtil {
 
 	/**
-	 * •¶š—ñ‚ªƒuƒ‰ƒ“ƒN‚©‚Ç‚¤‚©
-	 * @param str ‘ÎÛ•¶š—ñ
-	 * @return ƒuƒ‰ƒ“ƒN‚Ìê‡Atrue
+	 * æ–‡å­—åˆ—ãŒãƒ–ãƒ©ãƒ³ã‚¯ã‹ã©ã†ã‹
+	 * @param str å¯¾è±¡æ–‡å­—åˆ—
+	 * @return ãƒ–ãƒ©ãƒ³ã‚¯ã®å ´åˆã€true
 	 */
 	public static boolean isEmpty(String str) {
 		
-		if (str == null && CommonConstant.BLANK.equals(str)) {
-			return false;
+		if (str == null || CommonConstant.BLANK.equals(str)) {
+			return true;
 		}
-		return true;
+		return false;
 	}
 	
 	/**
-	 * •¶š—ñ‚ªƒuƒ‰ƒ“ƒNˆÈŠO‚©‚Ç‚¤‚©
-	 * @param str ‘ÎÛ•¶š—ñ
-	 * @return@ƒuƒ‰ƒ“ƒNˆÈŠO‚Ìê‡Atrue
+	 * æ–‡å­—åˆ—ãŒãƒ–ãƒ©ãƒ³ã‚¯ä»¥å¤–ã‹ã©ã†ã‹
+	 * @param str å¯¾è±¡æ–‡å­—åˆ—
+	 * @returnã€€ãƒ–ãƒ©ãƒ³ã‚¯ä»¥å¤–ã®å ´åˆã€true
 	 */
 	public static boolean isNotEmpty(String str) {
 		return !isEmpty(str);

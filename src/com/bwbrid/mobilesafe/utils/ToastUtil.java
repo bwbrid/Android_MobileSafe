@@ -36,34 +36,34 @@ public class ToastUtil {
 	}
 
 	/**
-	 * @•\¦ŠÔİ’è‰Â”\
+	 * ã€€è¡¨ç¤ºæ™‚é–“è¨­å®šå¯èƒ½
 	 * 
 	 * @param msg
-	 *            ƒƒbƒZ[ƒW“à—e
+	 *            ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å†…å®¹
 	 * @param duration
-	 *            •\¦ŠÔ‚ÌŠÔŠui LENGTH_SHORT or LENGTH_LONGj
+	 *            è¡¨ç¤ºæ™‚é–“ã®é–“éš”ï¼ˆ LENGTH_SHORT or LENGTH_LONGï¼‰
 	 */
 	public static void show(int resId, int duration) {
 		Toast.makeText(MyApplication.getContext(), resId, duration).show();
 	}
 
 	/**
-	 * @•\¦ŠÔİ’è‰Â”\
+	 * ã€€è¡¨ç¤ºæ™‚é–“è¨­å®šå¯èƒ½
 	 * 
 	 * @param msg
-	 *            ƒƒbƒZ[ƒW“à—e
+	 *            ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å†…å®¹
 	 * @param duration
-	 *            •\¦ŠÔ‚ÌŠÔŠui LENGTH_SHORT or LENGTH_LONGj
+	 *            è¡¨ç¤ºæ™‚é–“ã®é–“éš”ï¼ˆ LENGTH_SHORT or LENGTH_LONGï¼‰
 	 */
 	public static void show(String msg, int duration) {
 		Toast.makeText(MyApplication.getContext(), msg, duration).show();
 	}
 
 	/**
-	 * ƒfƒoƒbƒN—pToast
+	 * ãƒ‡ãƒãƒƒã‚¯ç”¨Toast
 	 * 
 	 * @param msg
-	 *            ƒƒbƒZ[ƒW“à—e
+	 *            ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å†…å®¹
 	 */
 	public static void debugShow(String msg) {
 		if (DEBUG) {

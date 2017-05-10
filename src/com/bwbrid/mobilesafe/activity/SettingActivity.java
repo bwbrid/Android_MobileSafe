@@ -27,17 +27,17 @@ public class SettingActivity extends Activity {
 	}
 
 	/**
-	 * ƒAƒvƒŠ‚ª©“®XVİ’èˆ—
+	 * ã‚¢ãƒ—ãƒªãŒè‡ªå‹•æ›´æ–°è¨­å®šå‡¦ç†
 	 */
 	private void initUpdate() {
 		
 		final SettingItewView stv_upadte = (SettingItewView) findViewById(R.id.stv_upadte);
 		
-		//@©“®XV‚Ì‘I‘ğó‘Ô‚ğİ’è
+		//ã€€è‡ªå‹•æ›´æ–°ã®é¸æŠçŠ¶æ…‹ã‚’è¨­å®š
 		boolean isUpdate = SpUtil.getBoolean(SpConstant.OPEN_UPDATE, false);
 		stv_upadte.setCheckState(isUpdate);
 		
-		// ƒ`ƒFƒbƒNƒ{ƒbƒNƒX‚Ì‘I‘ğƒCƒxƒ“ƒg
+		// ãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹ã®é¸æŠã‚¤ãƒ™ãƒ³ãƒˆ
 		stv_upadte.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -46,7 +46,7 @@ public class SettingActivity extends Activity {
 				boolean isCheck = stv_upadte.isCheck();
 				stv_upadte.setCheckState(!isCheck);
 				
-				// İ’èƒtƒ@ƒCƒ‹‚É‘I‘ğ‚Ìó‘Ô‚ğXV
+				// è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã«é¸æŠã®çŠ¶æ…‹ã‚’æ›´æ–°
 				SpUtil.putBoolean(SpConstant.OPEN_UPDATE, !isCheck);
 			}
 		});

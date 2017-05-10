@@ -45,7 +45,7 @@ import com.lidroid.xutils.util.LogUtils;
 public class SplashActivity extends Activity {
 
 	/**
-	 * Splash‰æ–Ê‚Ìƒg[ƒ^ƒ‹‘Ò‚¿ŠÔ
+	 * Splashç”»é¢ã®ãƒˆãƒ¼ã‚¿ãƒ«å¾…ã¡æ™‚é–“
 	 */
 	private final static long SLEEP_TIME = 3000;
 
@@ -68,15 +68,15 @@ public class SplashActivity extends Activity {
 				enterHome();
 				break;
 			case CommonConstant.ERROR_URL:
-				ToastUtil.debugShow("URLƒGƒ‰[");
+				ToastUtil.debugShow("URLã‚¨ãƒ©ãƒ¼");
 				enterHome();
 				break;
 			case CommonConstant.ERROR_IO:
-				ToastUtil.debugShow("IOƒGƒ‰[");
+				ToastUtil.debugShow("IOã‚¨ãƒ©ãƒ¼");
 				enterHome();
 				break;
 			case CommonConstant.ERROR_JSON:
-				ToastUtil.debugShow("JSON‰ğÍ‚É¸”s‚µ‚½");
+				ToastUtil.debugShow("JSONè§£æã«å¤±æ•—ã—ãŸ");
 				enterHome();
 				break;
 			default:
@@ -95,7 +95,7 @@ public class SplashActivity extends Activity {
 	}
 
 	/**
-	 * ƒƒCƒ“‰æ–Ê‚Ö‘JˆÚ
+	 * ãƒ¡ã‚¤ãƒ³ç”»é¢ã¸é·ç§»
 	 */
 	protected void enterHome() {
 		Intent intent = new Intent(mContext, HomeActivity.class);
@@ -115,7 +115,7 @@ public class SplashActivity extends Activity {
 		builder.setTitle(R.string.version_update);
 		builder.setMessage(mUpdateBean.getVersionDes());
 
-		// ƒLƒƒƒ“ƒZƒ‹ˆ—
+		// ã‚­ãƒ£ãƒ³ã‚»ãƒ«å‡¦ç†
 		builder.setNegativeButton(R.string.button_update_cancel,
 				new DialogInterface.OnClickListener() {
 
@@ -125,7 +125,7 @@ public class SplashActivity extends Activity {
 					}
 				});
 
-		// ƒAƒbƒvƒf[ƒgˆ—
+		// ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆå‡¦ç†
 		builder.setPositiveButton(R.string.button_update_confirm,
 				new DialogInterface.OnClickListener() {
 
@@ -135,7 +135,7 @@ public class SplashActivity extends Activity {
 					}
 				});
 
-		// –ß‚éƒ{ƒ^ƒ“‚ğ‰Ÿ‰ºˆ—
+		// æˆ»ã‚‹ãƒœã‚¿ãƒ³ã‚’æŠ¼ä¸‹å‡¦ç†
 		builder.setOnCancelListener(new DialogInterface.OnCancelListener() {
 
 			@Override
@@ -148,7 +148,7 @@ public class SplashActivity extends Activity {
 	}
 
 	/**
-	 * ƒAƒbƒvƒf[ƒgˆ—(APKƒ_ƒEƒ“ƒ[ƒh‹y‚ÑƒCƒ“ƒXƒg[ƒ‹)
+	 * ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆå‡¦ç†(APKãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰åŠã³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«)
 	 */
 	protected void downloadApk() {
 
@@ -165,24 +165,24 @@ public class SplashActivity extends Activity {
 
 						@Override
 						public void onSuccess(ResponseInfo<File> arg0) {
-							LogUtils.d("ƒ_ƒEƒ“ƒ[ƒh‚É¬Œ÷‚µ‚½B");
+							LogUtils.d("ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã«æˆåŠŸã—ãŸã€‚");
 							installApk(arg0.result);
 						}
 
 						@Override
 						public void onFailure(HttpException arg0, String arg1) {
-							LogUtils.d("ƒ_ƒEƒ“ƒ[ƒh‚É¸”s‚µ‚½B");
+							LogUtils.d("ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã«å¤±æ•—ã—ãŸã€‚");
 						}
 
 						@Override
 						public void onStart() {
-							LogUtils.d("ƒ_ƒEƒ“ƒ[ƒhŠJn‚µ‚½");
+							LogUtils.d("ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰é–‹å§‹ã—ãŸ");
 							super.onStart();
 						}
 
 						@Override
 						public void onLoading(long total, long current, boolean isUploading) {
-							LogUtils.d("ƒ_ƒEƒ“ƒ[ƒh’†");
+							LogUtils.d("ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ä¸­");
 							LogUtils.d("total = " + total);
 							LogUtils.d("current = " + current);
 							LogUtils.d("isUploading = " + isUploading);
@@ -196,7 +196,7 @@ public class SplashActivity extends Activity {
 	}
 
 	/**
-	 * ƒCƒ“ƒXƒg[ƒ‹APK
+	 * ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«APK
 	 * 
 	 * @param result
 	 */
@@ -209,7 +209,7 @@ public class SplashActivity extends Activity {
 	}
 
 	/**
-	 * APKƒCƒ“ƒXƒg[ƒ‹AæÁ‚µ‚Ä‚àHOME‰æ–Ê‚Ö‘JˆÚ
+	 * APKã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ™‚ã€å–æ¶ˆã—ã¦ã‚‚HOMEç”»é¢ã¸é·ç§»
 	 */
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -218,18 +218,18 @@ public class SplashActivity extends Activity {
 	}
 
 	/**
-	 * ‰æ–Ê‰Šúˆ—
+	 * ç”»é¢åˆæœŸå‡¦ç†
 	 */
 	private void initUI() {
 		tv_version_name = (TextView) findViewById(R.id.tv_version_name);
 		rl_root = (RelativeLayout) findViewById(R.id.rl_root);
 		
-		// ‰Šúˆ—‰æ–Ê‚ÌƒAƒjƒ[ƒVƒ‡ƒ“
+		// åˆæœŸå‡¦ç†æ™‚ç”»é¢ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³
 		initAnimation();
 	}
 
 	/**
-	 * ‰Šúˆ—‚ÌƒAƒjƒ[ƒVƒ‡ƒ“
+	 * åˆæœŸå‡¦ç†ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³
 	 */
 	private void initAnimation() {
 		AlphaAnimation alphaAnimation = new AlphaAnimation(0, 1);
@@ -238,7 +238,7 @@ public class SplashActivity extends Activity {
 	}
 
 	/**
-	 * ‰æ–Ê‚Ì•\¦ƒf[ƒ^‰Šúˆ—
+	 * ç”»é¢ã®è¡¨ç¤ºãƒ‡ãƒ¼ã‚¿åˆæœŸå‡¦ç†
 	 */
 	private void initData() {
 		tv_version_name.setText(getString(R.string.version_name) + getVersionName());
@@ -253,7 +253,7 @@ public class SplashActivity extends Activity {
 	}
 
 	/**
-	 * ƒo[ƒWƒ‡ƒ“–¼‚ğæ“¾
+	 * ãƒãƒ¼ã‚¸ãƒ§ãƒ³åã‚’å–å¾—
 	 * 
 	 * @return versionName
 	 */
@@ -263,7 +263,7 @@ public class SplashActivity extends Activity {
 	}
 
 	/**
-	 * ƒo[ƒWƒ‡ƒ“ƒR[ƒh‚ğæ“¾
+	 * ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚³ãƒ¼ãƒ‰ã‚’å–å¾—
 	 * 
 	 * @return versionName
 	 */
@@ -273,9 +273,9 @@ public class SplashActivity extends Activity {
 	}
 
 	/**
-	 * ƒT[ƒo[‚ÉÅV‚Ìƒo[ƒWƒ‡ƒ“‚ª‚ ‚é‚©‚Ç‚¤‚©‚ğƒ`ƒFƒbƒN
+	 * ã‚µãƒ¼ãƒãƒ¼ã«æœ€æ–°ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ãŒã‚ã‚‹ã‹ã©ã†ã‹ã‚’ãƒã‚§ãƒƒã‚¯
 	 * 
-	 * @param version ƒ[ƒJƒ‹ƒo[ƒWƒ‡ƒ“
+	 * @param version ãƒ­ãƒ¼ã‚«ãƒ«ãƒãƒ¼ã‚¸ãƒ§ãƒ³
 	 */
 	private void checkVersion(final int version) {
 		new Thread() {
@@ -288,10 +288,10 @@ public class SplashActivity extends Activity {
 					URL url = new URL(CommonConstant.SERVER_UPDATE_URL);
 					HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
-					// ƒŠƒNƒGƒXƒgƒIƒvƒVƒ‡ƒ“İ’è
+					// ãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚ªãƒ—ã‚·ãƒ§ãƒ³è¨­å®š
 					connection.setConnectTimeout(2000);
 					connection.setReadTimeout(2000);
-					// ƒfƒtƒHƒ‹ƒg‚Ì‚½‚ßAİ’è•s—v
+					// ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãŸã‚ã€è¨­å®šä¸è¦
 					// connection.setRequestMethod("GET");
 
 					if (connection.getResponseCode() == CommonConstant.HTTP_SUCCESS_CODE) {
@@ -339,10 +339,10 @@ public class SplashActivity extends Activity {
 	}
 
 	/**
-	 * Splash‰æ–Ê‚Å‚Ì‘Ò‚¿ŠÔ
+	 * Splashç”»é¢ã§ã®å¾…ã¡æ™‚é–“
 	 * 
 	 * @param time
-	 *            ŠÔ
+	 *            æ™‚é–“
 	 */
 	private void sleepTime(long time) {
 		if (time < SLEEP_TIME) {
@@ -351,11 +351,11 @@ public class SplashActivity extends Activity {
 	}
 
 	/**
-	 * packageInfoƒIƒuƒWƒFƒNƒg‚ğæ“¾
+	 * packageInfoã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—
 	 * 
 	 * @param flags
 	 *            "Additional option flags"
-	 * @return packageInfoƒIƒuƒWƒFƒNƒg
+	 * @return packageInfoã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	 */
 	private PackageInfo getPackageInfo(int flags) {
 		PackageManager pm = getPackageManager();
