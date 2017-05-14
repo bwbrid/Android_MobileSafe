@@ -1,11 +1,10 @@
 package com.bwbrid.mobilesafe.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import com.bwbrid.mobilesafe.R;
 
-public class Setup1Activity extends Activity {
+public class Setup1Activity extends BaseActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
