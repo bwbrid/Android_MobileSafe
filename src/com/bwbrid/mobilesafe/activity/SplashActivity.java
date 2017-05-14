@@ -1,4 +1,4 @@
-package com.bwbrid.mobilesafe;
+package com.bwbrid.mobilesafe.activity;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,9 +10,7 @@ import java.net.URL;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -28,7 +26,7 @@ import android.view.animation.AlphaAnimation;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.bwbrid.mobilesafe.activity.HomeActivity;
+import com.bwbrid.mobilesafe.R;
 import com.bwbrid.mobilesafe.bean.UpdateBean;
 import com.bwbrid.mobilesafe.common.CommonConstant;
 import com.bwbrid.mobilesafe.common.SpConstant;
@@ -42,15 +40,12 @@ import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.util.LogUtils;
 
-public class SplashActivity extends Activity {
+public class SplashActivity extends BaseActivity {
 
 	/**
 	 * Splash画面のトータル待ち時間
 	 */
 	private final static long SLEEP_TIME = 3000;
-
-	private String tag = "SplashActivity";
-	private Context mContext = MyApplication.getContext();
 
 	private TextView tv_version_name;
 
@@ -98,7 +93,7 @@ public class SplashActivity extends Activity {
 	 * メイン画面へ遷移
 	 */
 	protected void enterHome() {
-		Intent intent = new Intent(mContext, HomeActivity.class);
+		Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
 		startActivity(intent);
 		finish();
 	}
@@ -297,7 +292,7 @@ public class SplashActivity extends Activity {
 					if (connection.getResponseCode() == CommonConstant.HTTP_SUCCESS_CODE) {
 						InputStream inputStream = connection.getInputStream();
 						String json = StreamUtil.StreamToString(inputStream);
-						LogUtil.d(tag, json);
+						LogUtil.d(getTag(), json);
 
 						JSONObject jsonObject = new JSONObject(json);
 						mUpdateBean = new UpdateBean();
@@ -306,10 +301,10 @@ public class SplashActivity extends Activity {
 						mUpdateBean.setVersionCode(jsonObject.getString("versionCode"));
 						mUpdateBean.setDownloadUrl(jsonObject.getString("downloadUrl"));
 
-						LogUtil.d(tag, mUpdateBean.getVersionName());
-						LogUtil.d(tag, mUpdateBean.getVersionDes());
-						LogUtil.d(tag, mUpdateBean.getVersionCode());
-						LogUtil.d(tag, mUpdateBean.getDownloadUrl());
+						LogUtil.d(getTag(), mUpdateBean.getVersionName());
+						LogUtil.d(getTag(), mUpdateBean.getVersionDes());
+						LogUtil.d(getTag(), mUpdateBean.getVersionCode());
+						LogUtil.d(getTag(), mUpdateBean.getDownloadUrl());
 
 						if (version < Integer.valueOf(mUpdateBean.getVersionCode())) {
 							msg.what = CommonConstant.UPDATE_VERSION;

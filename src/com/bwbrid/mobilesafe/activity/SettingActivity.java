@@ -1,23 +1,16 @@
 package com.bwbrid.mobilesafe.activity;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.bwbrid.mobilesafe.MyApplication;
 import com.bwbrid.mobilesafe.R;
 import com.bwbrid.mobilesafe.common.SpConstant;
 import com.bwbrid.mobilesafe.utils.SpUtil;
 import com.bwbrid.mobilesafe.view.SettingItewView;
 
-public class SettingActivity extends Activity {
+public class SettingActivity extends BaseActivity {
 
-	private Context mContext = MyApplication.getContext();
-	
-	private String tag = "SettingActivity";
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

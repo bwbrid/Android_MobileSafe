@@ -34,7 +34,6 @@
     <string name="setting_auto_update">自動更新</string>
     <string name="setting_auto_update_on">自動更新ON</string>
     <string name="setting_auto_update_off">自動更新OFF</string>
-    
     <string name="setting_title">設定</string>
     
     <string name="dialog_set_pwd_title">パスワード設定</string>
@@ -42,12 +41,21 @@
     <string name="dialog_confim_password">パスワード確認</string>
     <string name="bt_dialog_ok">確定</string>
     <string name="bt_dialog_cancel">取消</string>
+    
     <string name="setup1_title">設定ガイド</string>
     <string name="setup1_guid">以下の手順に従って、設定してください。</string>
     <string name="setup1_content1">SIMカード変更アラーム</string>
     <string name="setup1_content2">GPSエコーロケーション</string>
     <string name="setup1_content3">リモートデータクリア</string>
     <string name="setup1_content4">リモートスクリーンロック</string>
+    
     <string name="setup_next_page">次へ</string>
+    <string name="setup_previous_page">前へ</string>
+    
+    <string name="setup2_title">SIMカードバインド</string>
+    <string name="setup2_guid">SIMバインドしたことにより、\n携帯起動時にSIMが変化した場合、\nアラートメールが送られます。</string>
+    <string name="setup2_bind_simcard">SIMをバインド</string>
+    <string name="setup2_bind_on">SIMバインド済み</string>
+    <string name="setup2_bind_off">SIMバインドしていない</string>
 
 </resources>

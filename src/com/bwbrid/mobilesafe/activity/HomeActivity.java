@@ -1,9 +1,7 @@
 package com.bwbrid.mobilesafe.activity;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.SparseIntArray;
@@ -19,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bwbrid.mobilesafe.MyApplication;
 import com.bwbrid.mobilesafe.R;
 import com.bwbrid.mobilesafe.common.CommonConstant;
 import com.bwbrid.mobilesafe.common.SpConstant;
@@ -28,12 +25,8 @@ import com.bwbrid.mobilesafe.utils.CommonUtil;
 import com.bwbrid.mobilesafe.utils.SpUtil;
 import com.bwbrid.mobilesafe.utils.ToastUtil;
 
-public class HomeActivity extends Activity {
+public class HomeActivity extends BaseActivity {
 
-	private Context mContext = MyApplication.getContext();
-	
-	// private String tag = "HomeActivity";
-	
 	private GridView gv_home;
 	
 	private SparseIntArray mHomeAppArray = null;
@@ -77,7 +70,7 @@ public class HomeActivity extends Activity {
 					secutirySetting();
 					break;
 				case 8:
-					Intent intent = new Intent(mContext, SettingActivity.class);
+					Intent intent = new Intent(getApplicationContext(), SettingActivity.class);
 					startActivity(intent);
 					break;
 				default:
@@ -104,7 +97,7 @@ public class HomeActivity extends Activity {
 		Builder builder = new AlertDialog.Builder(this);
 		final AlertDialog dialog = builder.create();
 		final int rid = CheckUtil.isEmpty(pwd) ?  R.layout.dialog_set_pwd : R.layout.dialog_confim_pwd;
-		final View view = View.inflate(mContext, rid, null);
+		final View view = View.inflate(getApplicationContext(), rid, null);
 		dialog.setView(view);
 		dialog.show();
 		
@@ -153,7 +146,7 @@ public class HomeActivity extends Activity {
 				
 				// セキュリティガイド画面へ遷移
 				dialog.dismiss();
-				Intent intent = new Intent(mContext, SetupOverActivity.class);
+				Intent intent = new Intent(getApplicationContext(), SetupOverActivity.class);
 				startActivity(intent);
 			}
 		});
@@ -191,7 +184,7 @@ public class HomeActivity extends Activity {
 			if (convertView != null) {
 				view = convertView;
 			} else {
-				view = View.inflate(mContext, R.layout.gridview_home_item, null);
+				view = View.inflate(getApplicationContext(), R.layout.gridview_home_item, null);
 			}
 			
 			TextView tv_title = (TextView) view.findViewById(R.id.tv_title);

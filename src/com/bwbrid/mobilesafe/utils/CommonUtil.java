@@ -45,7 +45,6 @@ public class CommonUtil {
 			for (byte b : bs) {
 				int i = b & 0xff;
 				String hexString = Integer.toHexString(i);
-				LogUtils.i(hexString);
 				if (hexString.length() < 2) {
 					hexString = zeroPadding(hexString, 2);
 				}
