@@ -4,21 +4,24 @@
     <string name="app_name">MobileSafe</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    
     <string name="version_name">Version： </string>
     <string name="version_update">Version Update</string>
     <string name="button_update_confirm">アップデート</string>
     <string name="button_update_cancel">後で</string>
-    
+    <string name="bt_dialog_ok">確定</string>
+    <string name="bt_dialog_cancel">取消</string>
     <string name="sdcard_not_mounted">SDカードが見つかりませんので、ダウンロード処理ができません。</string>
     
     <string name="error_update_failure">アップデートに失敗しました。</string>
     <string name="error_pwd_empty">パスワードを入力してください。</string>
     <string name="error_confim_pwd">入力されたパスワードが不一致のため、確認してください。</string>
     <string name="error_pwd_wrong">パスワードが正しくありません。</string>
+    <string name="error_check_sim">「SIMカードバインド」をチェックしてください。</string>
+    <string name="error_phone_number">電話番号を入力してください。</string>
+    <string name="error_check_security">セキュリティー機能をONにしてください。</string>
     
     <string name="home_title">機能一覧</string>
-    <string name="home_announce">人之初，性本善。性相近，习相远。苟不教，性乃迁。教之道，贵以专。昔孟母，择邻处。子不学，断机杼。窦燕山，有义方。教五子，名俱扬。养不教，父之过。教不严，师之惰。子不学，非所宜。幼不学，老何为。玉不琢，不成器。人不学，不知义。为人子，方少时。亲师友，习礼仪。</string>    
+    <string name="home_announce">人之初，性本善。性相近，习相远。苟不教，性乃迁。教之道，贵以专。昔孟母，择邻处。子不学，断机杼。窦燕山，有义方。教五子，名俱扬。养不教，父之过。教不严，师之惰。子不学，非所宜。幼不学，老何为。玉不琢，不成器。人不学，不知义。为人子，方少时。亲师友，习礼仪。</string>
     <string name="home_module_safe">セキュリティ</string>
     <string name="home_module_callmsgsafe">通信管理</string>
     <string name="home_module_apps">アプリ管理</string>
@@ -28,34 +31,42 @@
     <string name="home_module_sysoptimize">キャッシュ</string>
     <string name="home_module_tools">ツール</string>
     <string name="home_module_settings">設定</string>
-    
     <string name="noimage">noImage</string>
-    
     <string name="setting_auto_update">自動更新</string>
     <string name="setting_auto_update_on">自動更新ON</string>
     <string name="setting_auto_update_off">自動更新OFF</string>
     <string name="setting_title">設定</string>
-    
     <string name="dialog_set_pwd_title">パスワード設定</string>
     <string name="dialog_password">パスワード</string>
     <string name="dialog_confim_password">パスワード確認</string>
-    <string name="bt_dialog_ok">確定</string>
-    <string name="bt_dialog_cancel">取消</string>
     
-    <string name="setup1_title">設定ガイド</string>
+    <string name="setup_next_page">次へ</string>
+    <string name="setup_previous_page">前へ</string>
+    <string name="setup_finish">設定完了</string>
+    
+    <string name="setup1_title">１．設定ガイド</string>
     <string name="setup1_guid">以下の手順に従って、設定してください。</string>
     <string name="setup1_content1">SIMカード変更アラーム</string>
     <string name="setup1_content2">GPSエコーロケーション</string>
     <string name="setup1_content3">リモートデータクリア</string>
     <string name="setup1_content4">リモートスクリーンロック</string>
-    
-    <string name="setup_next_page">次へ</string>
-    <string name="setup_previous_page">前へ</string>
-    
-    <string name="setup2_title">SIMカードバインド</string>
-    <string name="setup2_guid">SIMバインドしたことにより、\n携帯起動時にSIMが変化した場合、\nアラートメールが送られます。</string>
-    <string name="setup2_bind_simcard">SIMをバインド</string>
+
+    <string name="setup2_title">２．SIMカードバインド</string>
+    <string name="setup2_guid">SIMカードをバインドしたことにより、\n携帯起動時にSIMカードの状態を検知し、\n変更された場合はメールにて通知します。</string>
+    <string name="setup2_bind_simcard">SIMカードバインド</string>
     <string name="setup2_bind_on">SIMバインド済み</string>
     <string name="setup2_bind_off">SIMバインドしていない</string>
+    
+    <string name="setup3_title">３．通知宛先番号設定</string>
+    <string name="setup3_guid">アラートメールを送付するために、\n電話番号を設定してください。</string>
+    <string name="setup3_contact_hnit">電話番号</string>
+    <string name="setup3_select_contact">電話帳から選択</string>
+    
+    <string name="setup4_title">４．設定完了</string>
+    <string name="setup4_guid">おめでとうございます！\nセキュリティー保護をONにし、\n設定を完了にしてください。</string>
+    <string name="setup4_security_on">セキュリティー保護ON</string>
+    <string name="setup4_security_off">セキュリティー保護OFF</string>
+    
+    <string name="contact_list_title">連絡先一覧</string>
 
 </resources>

@@ -104,7 +104,7 @@
             android:src="@drawable/setup1" />
 
         <Button
-            android:id="@+id/setup_next_page"
+            android:id="@+id/bt_next_page"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

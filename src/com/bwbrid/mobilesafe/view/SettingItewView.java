@@ -8,7 +8,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bwbrid.mobilesafe.R;
-import com.bwbrid.mobilesafe.common.CommonConstant;
 import com.bwbrid.mobilesafe.utils.CommonUtil;
 
 public class SettingItewView extends RelativeLayout {

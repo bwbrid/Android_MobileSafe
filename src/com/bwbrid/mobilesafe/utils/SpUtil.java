@@ -62,6 +62,16 @@ public class SpUtil {
 	}
 	
 	/**
+	 * preferences　から対象となるキー項目を削除
+	 * @param key キー
+	 */
+	public static void remove(String key) {
+		Editor edit = getSharedPreferences().edit();
+		edit.remove(key);
+		edit.commit();
+	}
+	
+	/**
 	 * SharedPreferencesオブジェクトを取得
 	 * @return SharedPreferences
 	 */
