@@ -93,6 +93,7 @@ public class CommonUtil {
 
     /**
      * activity遷移
+     * 
      * @param activity 対象アクティビティ
      * @param activityClass 遷移先アクティビティ
      * @param type 遷移タイプ （GotoNextActivity | GotoPreActivity）
@@ -112,5 +113,25 @@ public class CommonUtil {
                 break;
             default:
         }
+    }
+
+    /**
+     * activity遷移
+     * 
+     * @param activity 対象アクティビティ
+     * @param activityClass 遷移先アクティビティ
+     * @param isFinish 遷移後アクティビティが終了するかどうか
+     */
+    public static void gotoNextActivity(BaseActivity activity, Class<?> activityClass,
+            boolean isFinish) {
+
+        Intent intent = new Intent(MyApplication.getContext(), activityClass);
+        activity.startActivity(intent);
+
+        if (isFinish) {
+            activity.finish();
+        }
+
+        activity.overridePendingTransition(R.anim.next_in_anim, R.anim.next_out_anim);
     }
 }

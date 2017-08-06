@@ -67,6 +67,18 @@
     <string name="setup4_security_on">セキュリティー保護ON</string>
     <string name="setup4_security_off">セキュリティー保護OFF</string>
     
+    <string name="setup_over_title">セキュリティー設定</string>
+    
     <string name="contact_list_title">連絡先一覧</string>
+    
+    <string name="setup_over_number_title">安全番号</string>
+    <string name="setup_over_mode_title">有効モード</string>
+    <string name="setup_over_edit_title">設定修正</string>
+    <string name="setup_over_edit">変更</string>
+    <string name="setup_over_module_title">機能一覧</string>
+    <string name="setup_over_module1">GPSエコーロケーション: #location#</string>
+    <string name="setup_over_module2">アラーム音楽: #alarm#</string>
+    <string name="setup_over_module3">データクリア: #wipedata#</string>
+    <string name="setup_over_module4">スクリーンロック: #lockscreen#</string>
 
 </resources>

@@ -103,6 +103,8 @@ public class Setup2Activity extends BaseSetupActivity implements OnClickListener
                     TelephonyManager manager =
                             (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
                     String simSerialNumber = manager.getSimSerialNumber();
+                    // SpUtil.putString(SpConstant.SETUP_SIMCARD_NUMBER, simSerialNumber);
+                    simSerialNumber = "89014103211118510720";
                     SpUtil.putString(SpConstant.SETUP_SIMCARD_NUMBER, simSerialNumber);
 
                 } else {
